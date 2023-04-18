@@ -173,7 +173,6 @@
   },
   "packageManager": "yarn@3.4.1",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com",
     "access": "public"
   }
 }
