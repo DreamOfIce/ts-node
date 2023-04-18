@@ -66,6 +66,8 @@ export function create(createOptions: SwcTranspilerOptions): Transpiler {
       fileName.endsWith('.tsx') || fileName.endsWith('.jsx')
         ? tsxOptions
         : nonTsxOptions;
+
+    //@ts-expect-error
     const { code, map } = swcInstance.transformSync(input, {
       ...swcOptions,
       filename: fileName,
@@ -258,6 +260,7 @@ export function createSwcOptions(
 
     // Throw a helpful error if swc version is old, for example, if it rejects `ignoreDynamic`
     try {
+      //@ts-expect-error
       swcInstance.transformSync('', swcOptions);
     } catch (e) {
       throw new Error(

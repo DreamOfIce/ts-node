@@ -399,7 +399,7 @@ test.suite(
         stdinCode: '',
         waitFor: () => !!globalInRepl.testReport,
       },
-      (stdout) => {
+      () => {
         expect(globalInRepl.testReport).toMatchObject({
           stdinReport: false,
           evalReport: false,
@@ -443,7 +443,7 @@ test.suite(
         stdinCode: `${setReportGlobal('repl')};${saveReportsAsGlobal}`,
         waitFor: () => !!globalInRepl.testReport,
       },
-      (stdout) => {
+      () => {
         expect(globalInRepl.testReport).toMatchObject({
           stdinReport: false,
           evalReport: false,
